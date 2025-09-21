@@ -130,7 +130,7 @@ function createProductCard(product) {
   productDiv.className = "product-card";
 
   const imgSrc = encodeURI("images/" + product.image);
-  const fallback = "images/description.png";
+  const fallback = "description.png";
 
   productDiv.innerHTML = `
 <img src="${imgSrc}" alt="₹{product.name}" class="product-image" 
