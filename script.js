@@ -231,7 +231,7 @@ function showCart() {
       cartItem.innerHTML = `
                 <div>
                     <h4>${item.name} (${item.size})</h4>
-                    <p>$${item.price} x ${item.quantity}</p>
+                    <p>₹${item.price} x ${item.quantity}</p>
                 </div>
                 <div>
                     <button onclick="updateQuantity(${item.id}, '${item.size}', -1)">-</button>
