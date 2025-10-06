@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://<vaibhavgupta2542_db_user>:<1bQdjUbhUCFQs7gY>@cluster0.ojpcabp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://vaibhavgupta2542_db_user<R@ghav123>@cluster0.ojpcabp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
