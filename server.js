@@ -5,6 +5,16 @@ const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 const compression = require("compression");
 require("dotenv").config();
+const mongoose = require('mongoose');
+require('dotenv').config(); // Agar .env mein URI rakha hai
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://<username>:<password>@<cluster-url>/<dbname>?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log("MongoDB Connected"))
+.catch((err) => console.error("MongoDB connection error: ", err));
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
