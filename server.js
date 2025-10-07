@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 
 // MongoDB Atlas Connection
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost:27017/aos_ecommerce",
+  process.env.MONGODB_URI || "mongodb+srv://vaibhavgupta2542_db_user:Raghavg123@aos.jctvpvu.mongodb.net/aos_ecommerce?retryWrites=true&w=majority&appName=aos",
   { useNewUrlParser: true, useUnifiedTopology: true }
 )
 .then(() => console.log("MongoDB Connected"))
