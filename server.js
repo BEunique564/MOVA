@@ -48,6 +48,30 @@ mongoose
   .catch((err) => {
     console.error("MongoDB connection error:", err);
   });
+// Mongoose schema file ke upar ya server.js ke upar add karo
+const mongoose = require('mongoose');
+
+// Contact schema bana lo (server.js ke upar ya models file me)
+const Contact = mongoose.model('Contact', new mongoose.Schema({
+  name: String,
+  email: String,
+  message: String,
+  createdAt: { type: Date, default: Date.now }
+}));
+
+// Contact form POST route add karo (server.js me existing '/api/contact' ke andar):
+app.post('/api/contact', async (req, res) => {
+  try {
+    // Client se jo aayega (frontend form se)
+    const { name, email, message } = req.body;
+    // New doc create karo
+    const contact = new Contact({ name, email, message });
+    await contact.save();   // MongoDB Atlas me save karega
+    res.json({ success: true, message: "Contact saved!" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
 // Database Schemas
 const productSchema = new mongoose.Schema({
